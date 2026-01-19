@@ -1326,21 +1326,19 @@ curl -X GET "https://api-web.nhle.com/v1/edge/team-shot-speed-detail/9/20242025/
 
 - **Endpoint**: `/v1/edge/team-shot-location-top-10/{position}/{category}/{sort-by}/{season}/{game-type}`; `/v1/edge/team-shot-location-top-10/{position}/{category}/{sort-by}/now`
 - **Method**: GET
-- **Description**: Retrieve team-based ranking for NHL Edge data - **TODO** 
+- **Description**: Retrieve team-based ranking for NHL Edge data 
 - **Parameters**:
   - `position` (str) - 
     - 'all' - Forwards and Defense
-    - 'F' - Forwards
-    - 'D' - Defense
-  - `category` (str)  - **TODO** 
-    - 'unknown' - All Locations
-    - 'unknown' - High-Danger
-    - 'unknown' - Mid-Range
-    - 'unknown' - Long-Range
-  - `sort-by` (str) - String - **TODO** 
-    - 'unknown' - Shots on Goal
-    - 'unknown' - Goals
-    - 'unknown' - Shooting Percentage
+  - `category` (str)  - String -
+    - 'sog' - Shots on Goal
+    - 'goals' - Goals
+    - 'shooting-pctg' - Shooting Percentage
+  - `sort-by` (str) - String -
+    - 'all' - All Locations
+    - 'high' - High-Danger
+    - 'mid' - Mid-Range
+    - 'long' - Long-Range
   - `season` (int) - Season in YYYYYYYY format
   - `game-type` (int) - 2 for regular season, 3 for postseason
 - **Response**: JSON format
@@ -1438,7 +1436,7 @@ curl -X GET "https://api-web.nhle.com/v1/edge/skater-comparison/8482116/20242025
     - 'pp' - Power-play
     - 'pk' - Penalty kill
     - 'es' - Even-strength
-  - `sort-by` (str) - String - **TODO** 
+  - `sort-by` (str) - String - 
     - 'total' - Total distance skated
     - 'per-60' - Average distance skated per 60 min
     - 'max-game' - Top distance skated in a game
@@ -1480,7 +1478,7 @@ curl -X GET "https://api-web.nhle.com/v1/edge/skater-skating-distance-detail/848
     - 'all' - Forwards and Defense
     - 'F' - Forwards
     - 'D' - Defense
-  - `sort-by` (str) - String - **TODO** 
+  - `sort-by` (str) - String -
     - 'max' - Max skating speed
     - 'over-22' - 22 mph+ bursts
     - '20-22' - 20 - 22 mph bursts
@@ -1568,7 +1566,7 @@ curl -X GET "https://api-web.nhle.com/v1/edge/skater-zone-time/8482116/20242025/
     - 'all' - Forwards and Defense
     - 'F' - Forwards
     - 'D' - Defense
-  - `sort-by` (str) - String - **TODO** 
+  - `sort-by` (str) - String -
     - 'max' - Max skating speed
     - 'over-100' - 100+ mph
     - '90-99' - 90-100 mph
@@ -1605,21 +1603,19 @@ curl -X GET "https://api-web.nhle.com/v1/edge/skater-shot-speed-detail/8482116/2
 
 - **Endpoint**: `/v1/edge/skater-shot-location-top-10/{position}/{category}/{sort-by}/{season}/{game-type}`; `/v1/edge/skater-shot-location-top-10/{position}/{category}/{sort-by}/now`
 - **Method**: GET
-- **Description**: Presumably top 10 skaters based on the specified filters. -**TODO**
+- **Description**: Top 10 skaters based on the specified filters.
 - **Parameters**:
   - `position` (str) - 
     - 'all' - Forwards and Defense
-    - 'F' - Forwards
-    - 'D' - Defense
-  - `category` (str)  - **TODO** 
-    - 'unknown' - All Locations
-    - 'unknown' - High-Danger
-    - 'unknown' - Mid-Range
-    - 'unknown' - Long-Range
-  - `sort-by` (str) - String - **TODO** 
-    - 'unknown' - Shots on Goal
-    - 'unknown' - Goals
-    - 'unknown' - Shooting Percentage
+  - `category` (str)  - String -
+    - 'sog' - Shots on Goal
+    - 'goals' - Goals
+    - 'shooting-pctg' - Shooting Percentage
+  - `sort-by` (str) - String - 
+    - 'all' - All Locations
+    - 'high' - High-Danger
+    - 'mid' - Mid-Range
+    - 'long' - Long-Range
   - `season` (int) - Season in YYYYYYYY format
   - `game-type` (int) - 2 for regular season, 3 for postseason
 - **Response**: JSON format
@@ -1722,9 +1718,11 @@ curl -X GET "https://api-web.nhle.com/v1/edge/goalie-comparison/8476999/20242025
 - **Method**: GET
 - **Description**: Top 10 goalies based on the specified filters.
 - **Parameters**:
-  - `sort-by` (str) - String - **TODO** 
+  - `sort-by` (str) - String -
     - 'shots' - Shots on Goal
-    - *Likely more parameters available*
+    - 'save-pctg' - Save Percentage
+    - 'save-pctg-close' - Save Percentage when game is close
+    - 'shots-per-60' - Shot per 60 min
   - `season` (int) - Season in YYYYYYYY format
   - `game-type` (int) - 2 for regular season, 3 for postseason
 - **Response**: JSON format
@@ -1756,18 +1754,18 @@ curl -X GET "https://api-web.nhle.com/v1/edge/goalie-5v5-detail/8476999/20242025
 
 - **Endpoint**: `/v1/edge/goalie-shot-location-top-10/{category}/{sort-by}/{season}/{game-type}`; `/v1/edge/goalie-shot-location-top-10/{category}/{sort-by}/now`
 - **Method**: GET
-- **Description**: Presumably top 10 goalies based on the specified filters. -**TODO**
+- **Description**: Presumably top 10 goalies based on the specified filters.
 - **Parameters**:
-  - `category` (str)  - **TODO** 
-    - 'unknown' - All Locations
-    - 'unknown' - High-Danger
-    - 'unknown' - Mid-Range
-    - 'unknown' - Long-Range
-  - `sort-by` (str) - String - **TODO** 
-    - 'unknown' - Shots Against
-    - 'unknown' - Saves
-    - 'unknown' - Goals Against
-    - 'unknown' - Save %
+  - `category` (str) - String -
+    - 'shots-against' - Shots Against
+    - 'saves' - Saves
+    - 'goals-against' - Goals Against
+    - 'save-pctg' - Save %
+  - `sort-by` (str) - String -
+    - 'all' - All Locations
+    - 'high' - High-Danger
+    - 'mid' - Mid-Range
+    - 'long' - Long-Range
   - `season` (int) - Season in YYYYYYYY format
   - `game-type` (int) - 2 for regular season, 3 for postseason
 - **Response**: JSON format
@@ -1799,10 +1797,11 @@ curl -X GET "https://api-web.nhle.com/v1/edge/goalie-shot-location-detail/847699
 
 - **Endpoint**: `/v1/edge/goalie-edge-save-pctg-top-10/{sort-by}/{season}/{game-type}`; `/v1/edge/goalie-edge-save-pctg-top-10/{sort-by}/now`
 - **Method**: GET
-- **Description**: Unknown. -**TODO**
+- **Description**: Top 10 goalies based on the available filters. Contains games above .900 and percentage of games above .900.
 - **Parameters**:
-  - `sort-by` (str) - String - **TODO** 
-    - *Unknown parameters*
+  - `sort-by` (str) - String - 
+    - 'games' - Games over .900
+    - 'pctg' - Percent Games over .900
   - `season` (int) - Season in YYYYYYYY format
   - `game-type` (int) - 2 for regular season, 3 for postseason
 - **Response**: JSON format
