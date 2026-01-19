@@ -1152,7 +1152,7 @@ curl -X GET "https://api-web.nhle.com/v1/edge/team-comparison/9/20242025/2"
 
 - **Endpoint**: `/v1/edge/team-skating-distance-top-10/{positions}/{strength}/{sort-by}/{season}{game-type}`; `/v1/edge/team-skating-distance-top-10/{positions}/{strength}/{sort-by}/now`
 - **Method**: GET
-- **Description**: Retrieve team-based ranking for NHL Edge data - **TODO** 
+- **Description**: Retrieve team-based ranking for NHL Edge data
 - **Parameters**:
   - `position` (str) - 
     - 'all' - Forwards and Defense
@@ -1163,11 +1163,11 @@ curl -X GET "https://api-web.nhle.com/v1/edge/team-comparison/9/20242025/2"
     - 'pp' - Power-play
     - 'pk' - Penalty kill
     - 'es' - Even-strength
-  - `sort-by` (str) - String - **TODO** 
+  - `sort-by` (str) - String  
     - 'total' - Total distance skated
-    - 'unknown' - Average distance skated per 60 - **TODO** 
-    - 'unknown' - Top distance skated in a game - **TODO** 
-    - 'unknown' - Top distance skated in a period - **TODO** 
+    - 'per-60' - Average distance skated per 60 
+    - 'max-game' - Top distance skated in a game 
+    - 'max-period' - Top distance skated in a period 
   - `season` (int) - Season in YYYYYYYY format
   - `game-type` (int) - 2 for regular season, 3 for postseason
 - **Response**: JSON format
@@ -1199,16 +1199,17 @@ curl -X GET "https://api-web.nhle.com/v1/edge/team-skating-distance-detail/9/202
 
 - **Endpoint**: `/v1/edge/team-skating-speed-top-10/{position}/{sort-by}/{season}/{game-type}`; `v1/edge/team-skating-speed-top-10/{positions}/{sort-by}/now`
 - **Method**: GET
-- **Description**: Retrieve team-based ranking for NHL Edge data - **TODO** 
+- **Description**: Retrieve team-based ranking for NHL Edge data 
 - **Parameters**:
   - `position` (str) - 
     - 'all' - Forwards and Defense
     - 'F' - Forwards
     - 'D' - Defense
-  - `sort-by` (str) - String - **TODO** 
+  - `sort-by` (str) - String  
     - 'max' - Max skating speed
-    - 'unknown' - 22 mph+ bursts
-    - 'unknown' - 20 mph+ bursts
+    - 'over-22' - 22 mph+ bursts
+    - '20-22' - 20-22 mph bursts
+    - '18-20' - 18-20 mph bursts
   - `season` (int) - Season in YYYYYYYY format
   - `game-type` (int) - 2 for regular season, 3 for postseason
 - **Response**: JSON format
@@ -1282,16 +1283,18 @@ curl -X GET "https://api-web.nhle.com/v1/edge/team-zone-time-details/9/20242025/
 
 - **Endpoint**: `/v1/edge/team-shot-speed-top-10/{positions}/{sort-by}/{season}/{game-type}`; `/v1/edge/team-shot-speed-top-10/{positions}/{sort-by}/now`
 - **Method**: GET
-- **Description**: Retrieve team-based ranking for NHL Edge data - **TODO** 
+- **Description**: Retrieve team-based ranking for NHL Edge data
 - **Parameters**:
   - `position` (str) - 
     - 'all' - Forwards and Defense
     - 'F' - Forwards
     - 'D' - Defense
-  - `sort-by` (str) - String - **TODO** 
-    - 'max' - Maximum shot speed
-    - 'unknown' - 100+ mph - **TODO** 
-    - 'unknown' - 90+ mph - **TODO** 
+  - `sort-by` (str) - String - 
+    - 'max' - Max shot speed
+    - 'over-100' - 100+ mph
+    - '90-99' - 90-100 mph
+    - '80-89' - 80-90 mph
+    - '70-79' - 70-80 mph
   - `season` (int) - Season in YYYYYYYY format
   - `game-type` (int) - 2 for regular season, 3 for postseason
 - **Response**: JSON format
@@ -1437,9 +1440,9 @@ curl -X GET "https://api-web.nhle.com/v1/edge/skater-comparison/8482116/20242025
     - 'es' - Even-strength
   - `sort-by` (str) - String - **TODO** 
     - 'total' - Total distance skated
-    - 'unknown' - Average distance skated per 60 min
-    - 'unknown' - Top distance skated in a game
-    - 'unknown' - Top distance skated in a period
+    - 'per-60' - Average distance skated per 60 min
+    - 'max-game' - Top distance skated in a game
+    - 'max-period' - Top distance skated in a period
   - `season` (int) - Season in YYYYYYYY format
   - `game-type` (int) - 2 for regular season, 3 for postseason
 - **Response**: JSON format
@@ -1479,8 +1482,9 @@ curl -X GET "https://api-web.nhle.com/v1/edge/skater-skating-distance-detail/848
     - 'D' - Defense
   - `sort-by` (str) - String - **TODO** 
     - 'max' - Max skating speed
-    - 'unknown' - 22 mph+ bursts
-    - 'unknown' - 20 mph+ bursts
+    - 'over-22' - 22 mph+ bursts
+    - '20-22' - 20 - 22 mph bursts
+    - '18-20' - 18 - 20 mph bursts
   - `season` (int) - Season in YYYYYYYY format
   - `game-type` (int) - 2 for regular season, 3 for postseason
 - **Response**: JSON format
@@ -1566,8 +1570,10 @@ curl -X GET "https://api-web.nhle.com/v1/edge/skater-zone-time/8482116/20242025/
     - 'D' - Defense
   - `sort-by` (str) - String - **TODO** 
     - 'max' - Max skating speed
-    - 'unknown' - 100+ mph
-    - 'unknown' - 90+ mph
+    - 'over-100' - 100+ mph
+    - '90-99' - 90-100 mph
+    - '80-89' - 80-90 mph
+    - '70-79' - 70-80 mph
   - `season` (int) - Season in YYYYYYYY format
   - `game-type` (int) - 2 for regular season, 3 for postseason
 - **Response**: JSON format
