@@ -1117,7 +1117,7 @@ curl -X GET "https://api-web.nhle.com/v1/edge/team-detail/9/20242025/2"
 
 #### Team Landing
 
-- **Endpoint**: `/v1/edge/team-detail/{season}/{game-type}`; `/v1/edge/team-detail/now`
+- **Endpoint**: `/v1/edge/team-landing/{season}/{game-type}`; `/v1/edge/team-landing/now`
 - **Method**: GET
 - **Description**: Retrieve the leading team for each NHL Edge data point (shot attempts over 90, bursts over 22, distance per 60, high danger SOG, offensive, neutral and defensive zone time)
 - **Parameters**:
